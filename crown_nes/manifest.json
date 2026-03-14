@@ -1,0 +1,24 @@
+{
+  "name": "Crown NES - NES Emulator for CrowPanel ESP32-P4",
+  "version": "1.0.0",
+  "description": "NES emulator with ROM browser and USB gamepad support for CrowPanel Advanced 10.1 inch ESP32-P4",
+  "builds": [
+    {
+      "chipFamily": "ESP32-P4",
+      "parts": [
+        {
+          "path": "firmware/bootloader.bin",
+          "offset": 8192
+        },
+        {
+          "path": "firmware/partition-table.bin",
+          "offset": 32768
+        },
+        {
+          "path": "firmware/crown_nes.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown NES - Web Flasher</title>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10.1.1/dist/web/install-button.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+        .container {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #e94560;
+            margin-top: 0;
+        }
+        h2 {
+            color: #0f3460;
+            color: #e94560;
+        }
+        a { color: #53a8b6; }
+        .info {
+            background: #0f3460;
+            border-left: 4px solid #53a8b6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .warning {
+            background: #3d1c00;
+            border-left: 4px solid #e94560;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .steps ol {
+            line-height: 2;
+        }
+        code {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #53a8b6;
+        }
+        ul { line-height: 1.8; }
+        esp-web-install-button {
+            margin: 20px 0;
+            display: block;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crown NES -- Web Flasher</h1>
+        <p>NES Emulator for CrowPanel Advanced 10.1" ESP32-P4</p>
+
+        <div class="info">
+            <strong>Flash your CrowPanel directly from your browser!</strong><br>
+            No drivers or software needed. Works with Chrome, Edge, and Opera.
+        </div>
+
+        <div class="warning">
+            <strong>Before flashing:</strong>
+            <ul>
+                <li>Connect CrowPanel via USB cable</li>
+                <li>Close any Serial Monitor or other apps using the port</li>
+                <li>Use a <strong>data</strong> USB cable (not charging-only)</li>
+            </ul>
+        </div>
+
+        <div class="steps">
+            <h2>Steps:</h2>
+            <ol>
+                <li>Connect CrowPanel ESP32-P4 to your computer via USB</li>
+                <li>Click the Install button below</li>
+                <li>Select the serial port when prompted</li>
+                <li>Wait for flashing to complete (~30 seconds)</li>
+                <li>CrowPanel will reboot automatically</li>
+            </ol>
+        </div>
+
+        <esp-web-install-button
+            manifest="manifest.json"
+            install-unsupported="true">
+        </esp-web-install-button>
+
+        <h2>After Flashing:</h2>
+        <ul>
+            <li>Prepare SD card (FAT32) with <code>/roms/</code> folder</li>
+            <li>Place <code>.nes</code> ROM files inside <code>/roms/</code></li>
+            <li>Insert SD card and power on CrowPanel</li>
+            <li>ROM browser appears -- connect USB gamepad to play</li>
+        </ul>
+
+        <h2>USB Gamepad:</h2>
+        <ul>
+            <li>Connect via USB-A port (or USB hub / Steam Deck Dock)</li>
+            <li>Tested with PS5 DualSense</li>
+            <li>D-Pad: navigate menu / in-game directions</li>
+            <li>A/B buttons: action buttons</li>
+            <li>Start/Select: start game / pause</li>
+        </ul>
+
+        <h2>Troubleshooting:</h2>
+        <ul>
+            <li><strong>Port not found:</strong> Press Reset button on CrowPanel, try again</li>
+            <li><strong>Flashing fails:</strong> Ensure data USB cable, close other serial apps</li>
+            <li><strong>Browser not supported:</strong> Use Chrome 89+, Edge 89+, or Opera 75+</li>
+            <li><strong>No games shown:</strong> Check SD card is FAT32 with <code>.nes</code> files in <code>/roms/</code></li>
+        </ul>
+
+        <div class="info">
+            <strong>Project:</strong>
+            <a href="https://github.com/AndyAiCardputer/crowpanel-esp32p4-projects" target="_blank">GitHub Repository</a>
+            | <a href="https://www.youtube.com/@AndyAiCardputer" target="_blank">YouTube</a>
+        </div>
+    </div>
+</body>
+</html>
