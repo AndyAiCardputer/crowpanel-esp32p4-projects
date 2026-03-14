@@ -74,21 +74,23 @@
         <div class="warning">
             <strong>Before flashing:</strong>
             <ul>
-                <li>Connect CrowPanel via USB cable</li>
+                <li>Use the <strong>USB 2.0 Device</strong> port (NOT the UART0/CH341 port!)</li>
                 <li>Close any Serial Monitor or other apps using the port</li>
                 <li>Use a <strong>data</strong> USB cable (not charging-only)</li>
+                <li>You <strong>MUST</strong> enter Download Mode (see steps below)</li>
             </ul>
         </div>
 
         <div class="steps">
             <h2>Steps:</h2>
             <ol>
-                <li>Connect CrowPanel ESP32-P4 to your computer via USB</li>
-                <li>Click the Install button below</li>
-                <li>Select the serial port when prompted</li>
-                <li>Wait for flashing to complete (~30 seconds)</li>
-                <li>CrowPanel will reboot automatically</li>
+                <li>Connect CrowPanel to the <strong>USB 2.0 Device</strong> port</li>
+                <li>Enter <strong>Download Mode</strong>: Hold <code>BOOT</code> button, press <code>RESET</code>, release <code>BOOT</code></li>
+                <li>Click <strong>Connect</strong> below and select the ESP32-P4 port</li>
+                <li>Click <strong>Install</strong> and wait (~30 seconds)</li>
+                <li>Press <code>RESET</code> to start the emulator</li>
             </ol>
+            <p><em>If flashing fails: try holding <code>BOOT</code> while clicking Install, then release after it starts.</em></p>
         </div>
 
         <esp-web-install-button
