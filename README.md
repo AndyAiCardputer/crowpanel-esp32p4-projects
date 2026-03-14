@@ -16,6 +16,12 @@ Projects and tests for **CrowPanel Advanced 10.1 inch ESP32-P4 HMI AI Display** 
 | Project | Description | Status |
 |---------|-------------|--------|
 | [crown_nes](crown_nes/) | NES Emulator with USB gamepad and ROM browser | Working |
+| [test_display_colors](test_display_colors/) | Display color cycle test (LVGL, MIPI DSI) | Working |
+| [test_usb_gamepad](test_usb_gamepad/) | USB Host gamepad test with on-screen log (PS5 DualSense) | Working |
+
+## Documentation
+
+- [CrowPanel Knowledge Base](docs/CROWPANEL_KNOWLEDGE_BASE.md) -- everything we know about CrowPanel ESP32-P4: hardware specs, USB ports, flashing, display init, PSRAM, troubleshooting, UART bridge, USB Host, and more.
 
 ## Building
 
